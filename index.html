@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Brother From Another Mother!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PREMIUM LIGHT THEME CSS --- */
+        :root {
+            --bg-primary: #FCFBF7; /* Luxurious Off-White */
+            --bg-secondary: #FFF5F5; /* Soft Rose Petal Cream */
+            --gold-primary: #D4AF37; /* Elegant Gold Accent */
+            --gold-light: #F3E5AB; /* Soft Gold Glow */
+            --text-dark: #3A3530; /* Deep Charcoal for readability */
+            --text-muted: #70665C; /* Elegant Muted Earth */
+            --pastel-pink: #FFECEF; /* Pure Hearted Soft Pink */
+            --pastel-blue: #EBF4F6; /* Calming Brotherly Trust Blue */
+            --card-shadow: 0 15px 35px rgba(212, 175, 55, 0.12);
+            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-primary);
+            border-radius: 5px;
+        }
+
+        /* --- TYPOGRAPHY SYSTEMS --- */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+        }
+
+        .pure-heart-script {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- HERO HEADER SECTION --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary), var(--pastel-pink), var(--bg-secondary));
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+            border: 1px solid var(--gold-primary);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #3A3530, #D4AF37, #3A3530);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Premium Floating Particles Canvas */
+        #luxury-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* --- THE GOLDEN CTA BUTTON --- */
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--gold-primary);
+            background: transparent;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-primary);
+            color: #FFF;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTION BASE ARCHITECTURE --- */
+        section {
+            padding: 120px 20px;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 1px;
+            background: var(--gold-primary);
+            margin: 15px auto 0 auto;
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* --- DIGITAL MEMORY WALL --- */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .memory-card {
+            background: #FFFFFF;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-primary);
+        }
+
+        /* Pure CSS Artistic Placeholder for Images */
+        .memory-art {
+            height: 240px;
+            background: linear-gradient(45deg, var(--pastel-pink), var(--pastel-blue));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .memory-art::after {
+            content: '♥';
+            font-size: 3rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .memory-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .memory-tag {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .memory-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .memory-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* --- THE 50 REASONS COMPONENT --- */
+        .reasons-container {
+            background: var(--bg-secondary);
+            padding: 80px 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .reasons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            list-style: none;
+        }
+
+        .reason-item {
+            background: #FFF;
+            padding: 20px 25px;
+            border-left: 3px solid var(--gold-primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .reason-item:hover {
+            transform: scale(1.03);
+            background: var(--pastel-pink);
+        }
+
+        .reason-number {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-right: 10px;
+        }
+
+        /* --- CORE LETTER SECTION (PURE HEARTED) --- */
+        .brotherhood-letter {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 60px 80px;
+            box-shadow: var(--card-shadow);
+            border-radius: 4px;
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .brotherhood-letter::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+        }
+
+        .letter-p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        /* --- INTERACTIVE VIRTUAL TIMELINE --- */
+        .timeline-vertical {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-vertical::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--gold-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-block {
+            padding: 20px 0;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-block-left {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-block-right {
+            left: 50%;
+            padding-left: 40px;
+            text-align: left;
+        }
+
+        .timeline-badge {
+            position: absolute;
+            top: 25px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            border: 4px solid #FFF;
+            z-index: 5;
+        }
+
+        .timeline-block-right .timeline-badge {
+            left: -10px;
+        }
+
+        .timeline-card {
+            background: #FFF;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .timeline-year {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--gold-primary);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        /* --- THE LUXURY INTERACTIVE CAROUSEL --- */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border-radius: 8px;
+            background: #FFF;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 500%;
+        }
+
+        .slide-unit {
+            width: 20%;
+            padding: 60px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .dot-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold-light);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .dot-btn.active-dot {
+            background: var(--gold-primary);
+            transform: scale(1.3);
+        }
+
+        /* --- INTERACTIVE FUTURE TOAST COMPONENT --- */
+        .toast-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .toast-brick {
+            background: #FFF;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 30px;
+            text-align: center;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .toast-brick:hover {
+            background: var(--bg-secondary);
+            border-color: var(--gold-primary);
+        }
+
+        .toast-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- LUXURIOUS MUSIC TRACK TRIGGER AREA --- */
+        .audio-theater {
+            background: linear-gradient(to right, var(--pastel-pink), var(--pastel-blue));
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* --- RESPONSIVE OPTIMIZATION LAYERS --- */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.2rem; }
+            .pure-heart-script { font-size: 2.5rem; }
+            section { padding: 60px 15px; }
+            .brotherhood-letter { padding: 30px; }
+            .timeline-vertical::after { left: 20px; }
+            .timeline-block { width: 100%; left: 0; padding-left: 45px; padding-right: 0; text-align: left; }
+            .timeline-block-left .timeline-badge, .timeline-block-right .timeline-badge { left: 10px; }
+            .slide-unit { padding: 30px 15px; }
+        }
+
+        /* --- LUXURY FOOTER CREATED BY A BROTHER --- */
+        footer {
+            background: #FFF;
+            border-top: 1px solid var(--gold-light);
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .heart-icon {
+            color: #E2583E;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <canvas id="luxury-canvas"></canvas>
+        <div class="hero-container">
+            <span class="pure-heart-script">To My Pure Hearted Brother</span>
+            <h1 class="main-title">Happy Birthday,<br>My True Brother</h1>
+            <p class="sub-title">An Unbreakable Bond • Built On Trust & Loyalty</p>
+            <a href="#letter-section" class="btn-gold">Enter The Celebration</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="letter-section">
+            <div class="section-header">
+                <span class="pure-heart-script">Straight From The Soul</span>
+                <h2>The Unwritten Manifesto of Brotherhood</h2>
+                <p>Kyunki tu sirf dost nahi, meri poori zindagi ka sabse anmol hissa hai.</p>
+            </div>
+
+            <div class="brotherhood-letter">
+                <p class="letter-p"><strong>Mere Bhai,</strong></p>
+                <p class="letter-p">Aaj ke is khaas din par, mai dil se tujhe batana chahta hoon ki teri haseen presence meri life me kya maane rakhti hai. Duniya me dost toh bohot milte hain, par ek aisa shaksh milna jo aapko aapki khamiyon ke sath accept kare, jo aapke bina kahe aapki har khushi aur har pareshani samajh le—wo naseeb sirf khushkismat logon ko milta hai. Aur mai wo khushkismat insaan hoon jise tere jaisa bhai mila.</p>
+                <p class="letter-p">Hum dono ka rishta kisi khoon ke rishte se kam nahi hai. Humne sath me haseen pal bitaye hain, bewajah ki baaton par thahake lagaye hain, aur life ke mushkil waqt me ek dusre ka hath thama hai. Jab bhi mujhe laga ki mai akele pad raha hoon, tera bas ek hi dialogue hota tha—"Bhai tu chinta mat kar, mai hoon na." Wo chaar shabd mere liye duniya ki sabse badi taqat ban jate hain.</p>
+                <p class="letter-p">Tera dil itna saaf (pure-hearted) hai ki aaj ke is swarthi zamane me teri jaisa bacha-kucha sacha insaan dekh kar sukoon milta hai. Tu kabhi kisi ka bura nahi sochta, sabki madad ke liye hamesha taiyar rehta hai. Teri yahi saadgi aur amiri teri pehchan hai jo tujhe baakiyon se alag aur behad qeemti banati hai.</p>
+                <p class="letter-p">Mai dua karta hoon ki tera yeh naya saal tere liye beshumar khushiyan, sacha sukoon, aur kamyabi ke naye raste khole. Tu jo bhi sapna dekhe, wo haqeeqat ban jaye. Tera bhai hamesha, har mod par, tere sath khada rahega—chahe halat kaise bhi hon.</p>
+                <p class="letter-p" style="text-align: right; font-family: 'Cinzel', serif; font-weight: bold; margin-top: 40px;">
+                    Tera Bhai, Hamesha Ke Liye.<br>
+                    <span style="font-family:'Sacramento'; font-size: 2rem;">Infinite Love</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="timeline-section" style="background: linear-gradient(180deg, #FFF, var(--bg-secondary), #FFF);">
+            <div class="section-header">
+                <span class="pure-heart-script">Our Golden Era</span>
+                <h2>The Archive of Our Brotherhood</h2>
+                <p>Ek ek saal, ek ek lamha jo humne sath me jiya aur yaadgaar banaya.</p>
+            </div>
+
+            <div class="timeline-vertical">
+                <div class="timeline-block timeline-block-left">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">The Inception</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">First Encounter</p>
+                        <p class="memory-text">Jab pehli baar mile the, toh nahi pata tha ki tu meri life ka sabse bada support system ban jayega. Ek anjaan se shuru hokar jaan banne tak ka safar behad khoobsurat raha hai.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">Late Night Rides</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">The Unfiltered Chats</p>
+                        <p class="memory-text">Wo bina kisi manzil ke raaton ko ghumna, chai ki tapri par ghanto tak deep life concepts aur future ke sapno par baatein karna. Wo lamhe sach me anmol hain.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-left">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">The Modern Battles</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">Through Thick & Thin</p>
+                        <p class="memory-text">Life ne jab bhi test kiya, hum dono ne mil kar har problem ka samna kiya. Jab sabne sath choda, tab hum dono ne ek dusre ka hosla badhaya.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block timeline-block-right">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-year">Infinite Future</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">To Visualizing Empires</p>
+                        <p class="memory-text">Ab toh bas aage badhna hai, kamyabi ki nayi bulandiyon ko chuna hai aur poori duniya ko dikhana hai ki jab do bhai sath hote hain toh kuch bhi namumkin nahi hota.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carousel-section">
+            <div class="section-header">
+                <span class="pure-heart-script">Our Unfiltered Vibe</span>
+                <h2>Inside Stories & Golden Reminders</h2>
+                <p>Kuch aisi baatein aur crazy moments jo sirf hum dono hi samajh sakte hain.</p>
+            </div>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-slides" id="mainSlides">
+                    <div class="slide-unit">
+                        <h3 style="margin-bottom:20px; font-family:'Cinzel';">The Ultimate Companion</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); font-style: italic;">"Tu jaisa hai, waisa hi rehna bhai. Teri jaisa pure aur loyal insaan milna is fake world me bilkul impossible hai."</p>
+                    </div>
+                    <div class="slide-unit">
+                        <h3 style="margin-bottom:20px; font-family:'Cinzel';">The No-Judgement Zone</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); font-style: italic;">"Tere sath mujhe kabhi soch kar bolna nahi padta. Teri samne mai jaisa hoon, waisa hi rehta hoon, and that is the highest luxury of life."</p>
+                    </div>
+                    <div class="slide-unit">
+                        <h3 style="margin-bottom:20px; font-family:'Cinzel';">The Endless Laughs</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); font-style: italic;">"Wo bewajah ki baaton par itna hasna ki pet dukhne lage, un yaadon ko yaad karke aaj bhi chehre par muskaan aa jati hai."</p>
+                    </div>
+                    <div class="slide-unit">
+                        <h3 style="margin-bottom:20px; font-family:'Cinzel';">The Silent Dynamic</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); font-style: italic;">"Hum dono bina bole bhi ek dusre ki baat aur tension samajh jate hain. Yeh telepathy sirf sachaai aur gehri mohabbat se aati hai."</p>
+                    </div>
+                    <div class="slide-unit">
+                        <h3 style="margin-bottom:20px; font-family:'Cinzel';">The Lifelong Shield</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); font-style: italic;">"Yaad rakhna, chahe puri duniya khilaf ho jaye, tera bhai teri dhaal bankar sabse aage khada rahega hamesha."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="dot-btn active-dot" onclick="switchSlide(0)"></button>
+                <button class="dot-btn" onclick="switchSlide(1)"></button>
+                <button class="dot-btn" onclick="switchSlide(2)"></button>
+                <button class="dot-btn" onclick="switchSlide(3)"></button>
+                <button class="dot-btn" onclick="switchSlide(4)"></button>
+            </div>
+        </section>
+
+        <section id="reasons-section" style="background-color: var(--bg-primary);">
+            <div class="section-header">
+                <span class="pure-heart-script">The Definitive Compendium</span>
+                <h2>50 Reasons For Celebrating Your Existence</h2>
+                <p>A highly descriptive architectural layout detailing your brilliance, integrity, and soul.</p>
+            </div>
+
+            <div class="reasons-container">
+                <ul class="reasons-list">
+                    <li class="reason-item"><span class="reason-number">01</span> Teri absolute integrity aur pure, unfiltered saaf dil.</li>
+                    <li class="reason-item"><span class="reason-number">02</span> Har mushkil halat me bina swarth ke mera sath dena.</li>
+                    <li class="reason-item"><span class="reason-number">03</span> Teri unconditional loyalty jo har imtihan me pakki rahi.</li>
+                    <li class="reason-item"><span class="reason-number">04</span> Teri har baat me chupa hua sacha aur seedha bhaichara.</li>
+                    <li class="reason-item"><span class="reason-number">05</span> Bina kisi validation ke mera hosla hamesha buland rakhna.</li>
+                    <li class="reason-item"><span class="reason-number">06</span> Teri presence jo bade se bade tanaav ko pal me door kar deti hai.</li>
+                    <li class="reason-item"><span class="reason-number">07</span> Hamari aisi dosti jisme ego ki ratti bhar bhi jagah nahi hai.</li>
+                    <li class="reason-item"><span class="reason-number">08</span> Jab saari duniya shakk kare, tera mujhpar andha vishwas rakhna.</li>
+                    <li class="reason-item"><span class="reason-number">09</span> Teri haseen hansi jo poore kamre me positivity bhar deti hai.</li>
+                    <li class="reason-item"><span class="reason-number">10</span> Sabko izzat dena, chahe wo chota ho ya bada, tera nek behavior.</li>
+                    <li class="reason-item"><span class="reason-number">11</span> Life ke har ups and downs ko bohot maturity se handle karna.</li>
+                    <li class="reason-item"><span class="reason-number">12</span> Wo saari crazy deep conversations jo hum raat ko karte hain.</li>
+                    <li class="reason-item"><span class="reason-number">13</span> Jab mai sahi hota hoon toh mera stand puri duniya ke samne lena.</li>
+                    <li class="reason-item"><span class="reason-number">14</span> Jab mai galat hota hoon toh akele me mujhe daant kar rasta dikhana.</li>
+                    <li class="reason-item"><span class="reason-number">15</span> Teri humble energy jo sabko aasaani se apna bana leti hai.</li>
+                    <li class="reason-item"><span class="reason-number">16</span> Hamari secret legacy aur plans jinhe hum sach karne wale hain.</li>
+                    <li class="reason-item"><span class="reason-number">17</span> Teri reliability—mujhe pata hai mai aankhein band karke tujhpar rely kar sakta hoon.</li>
+                    <li class="reason-item"><span class="reason-number">18</span> Tu kabhi kisi ki pith peeche burai nahi karta, tera high character.</li>
+                    <li class="reason-item"><span class="reason-number">19</span> Meri family ko apni family ki tarah dil se respect dena.</li>
+                    <li class="reason-item"><span class="reason-number">20</span> Teri wisdom jo mushkil se mushkil faisle ko aasan bana deti hai.</li>
+                    <li class="reason-item"><span class="reason-number">21</span> Tere sath bitaya hua ek ek second mere liye therapeutic hai.</li>
+                    <li class="reason-item"><span class="reason-number">22</span> Hamari mind-blowing similarity jo hamesha sabko hairan karti hai.</li>
+                    <li class="reason-item"><span class="reason-number">23</span> Tu hamesha ground-to-earth rehta hai chahe kitni bhi success mile.</li>
+                    <li class="reason-item"><span class="reason-number">24</span> Teri capacity sabko khush rakhne ki aur pyaar baantne ki.</li>
+                    <li class="reason-item"><span class="reason-number">25</span> Jab sab rishte badal gaye, tab bhi tera waisa hi rehna.</li>
+                    <li class="reason-item"><span class="reason-number">26</span> Tera mazaakiya andaz jo maahol ko halka aur pyara bana deta hai.</li>
+                    <li class="reason-item"><span class="reason-number">27</span> Teri protection jo tu hamesha apne bhai ke liye dikhata hai.</li>
+                    <li class="reason-item"><span class="reason-number">28</span> Kisi bhi situation me umeed na khona, teri radiant positivity.</li>
+                    <li class="reason-item"><span class="reason-number">29</span> Hamari anmol chai aur food dates jahan hum unfiltered rehte hain.</li>
+                    <li class="reason-item"><span class="reason-number">30</span> Teri aadat hamesha sach bolne ki, chahe wo kitna bhi kadwa ho.</li>
+                    <li class="reason-item"><span class="reason-number">31</span> Teri unconditional support jab mai sabse zyada vulnerable tha.</li>
+                    <li class="reason-item"><span class="reason-number">32</span> Hamare big visions aur dreams jo hum sath me poore karenge.</li>
+                    <li class="reason-item"><span class="reason-number">33</span> Tera forgiving nature, tu kabhi dil me kaddavaahat nahi rakhta.</li>
+                    <li class="reason-item"><span class="reason-number">34</span> Teri real smile jo kisi ko bhi comfortable fill karati hai.</li>
+                    <li class="reason-item"><span class="reason-number">35</span> Tera hard-working nature jo mujhe bhi hamesha inspire karta hai.</li>
+                    <li class="reason-item"><span class="reason-number">36</span> Tu materialistic cheezon se upar uthkar insaan ki qadar karta hai.</li>
+                    <li class="reason-item"><span class="reason-number">37</span> Hamare beech ka genuine freedom jahan koi formalities nahi hain.</li>
+                    <li class="reason-item"><span class="reason-number">38</span> Tere diye hue anmol and solid lifestyle advices.</li>
+                    <li class="reason-item"><span class="reason-number">39</span> Tu meri khushi me mujhse zyada sach me khush hota hai.</li>
+                    <li class="reason-item"><span class="reason-number">40</span> Tera dynamic personality jo hamesha confident lagta hai.</li>
+                    <li class="reason-item"><span class="reason-number">41</span> Hamara silence bhi comfortable hota hai, hume har waqt bolne ki zarurat nahi parti.</li>
+                    <li class="reason-item"><span class="reason-number">42</span> Teri sachi guidance jab life me bade aur tough decisions lene ho.</li>
+                    <li class="reason-item"><span class="reason-number">43</span> Tu real gold hai is fake silver aur brass waali modern duniya me.</li>
+                    <li class="reason-item"><span class="reason-number">44</span> Teri har promise nibhane ki dedicated loyalty aur aadat.</li>
+                    <li class="reason-item"><span class="reason-number">45</span> Tera respect kamane ka tareeka bina kisi loud show-off ke.</li>
+                    <li class="reason-item"><span class="reason-number">46</span> Meri success ko apni khud ki success samajhna aur celebrate karna.</li>
+                    <li class="reason-item"><span class="reason-number">47</span> Tere sath guzaara har ek din ek lifetime ke sukoon jaisa hai.</li>
+                    <li class="reason-item"><span class="reason-number">48</span> Teri golden habits jo tujhe ek perfect gentleman banati hain.</li>
+                    <li class="reason-item"><span class="reason-number">49</span> Tu sirf dost nahi, uparwaale ka bheja hua mera saga bhai hai.</li>
+                    <li class="reason-item"><span class="reason-number">50</span> Kyunki tere jaisa sacha, pyaara aur dil ka saaf insaan koi dusra ho hi nahi sakta.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gallery-section">
+            <div class="section-header">
+                <span class="pure-heart-script">Snapshot Exhibits</span>
+                <h2>The Golden Moments Layout</h2>
+                <p>A high-end visual conceptual grid celebrating milestones of absolute trust.</p>
+            </div>
+
+            <div class="memory-grid">
+                <div class="memory-card">
+                    <div class="memory-art" style="background: linear-gradient(135deg, #FFF0F5, #FEE1E8);"></div>
+                    <div class="memory-content">
+                        <div>
+                            <span class="memory-tag">Chapter One</span>
+                            <h3 class="memory-title">The Foundation Day</h3>
+                            <p class="memory-text">Jab humne samajh liya tha ki hamari dosti baki sabki tarah temporary nahi hai balki hum life long sath chalne wale hain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-art" style="background: linear-gradient(135deg, #E6F2F8, #D4EDDA);"></div>
+                    <div class="memory-content">
+                        <div>
+                            <span class="memory-tag">Chapter Two</span>
+                            <h3 class="memory-title">The Silent Victories</h3>
+                            <p class="memory-text">Wo chhote chhote goals jo humne milkar achieve kiye, aur bina kisi shor-shabaaba ke sath me unhe celebrate kiya.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-art" style="background: linear-gradient(135deg, #FFFDF0, #F3E5AB);"></div>
+                    <div class="memory-content">
+                        <div>
+                            <span class="memory-tag">Chapter Three</span>
+                            <h3 class="memory-title">The Lifelong Pact</h3>
+                            <p class="memory-text">Hamara wo wada ki chahe life hume kisi bhi mod par le jaye, hamara bond hamesha utna hi pure aur strong rahega.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future-section" style="background-color: var(--bg-secondary);">
+            <div class="section-header">
+                <span class="pure-heart-script">Manifesting Greatness</span>
+                <h2>To The Future Empires We Build</h2>
+                <p>Hamare bade sapne aur anmol koshishein jo aane wale kal me sach hongi.</p>
+            </div>
+
+            <div class="toast-board">
+                <div class="toast-brick">
+                    <span class="toast-icon">🥂</span>
+                    <h3 style="font-family:'Cinzel'; margin-bottom:15px;">Global Success</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted);">Aane wala kal hamara hai, hum jo bhi kaam haath me lenge, usme shandar kamyabi haasil karenge.</p>
+                </div>
+                <div class="toast-brick">
+                    <span class="toast-icon">💎</span>
+                    <h3 style="font-family:'Cinzel'; margin-bottom:15px;">Unmatched Luxury</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted);">Hum mehnat karenge aur wo har cheez haasil karenge jiske hum dono haqdaar hain. Luxury living and pure peace.</p>
+                </div>
+                <div class="toast-brick">
+                    <span class="toast-icon">🏡</span>
+                    <h3 style="font-family:'Cinzel'; margin-bottom:15px;">Brotherhood Forever</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted);">Waqt badlega, saal badlenge, par hamara yeh pure-hearted rishta pehle ki tarah hi mazboot rahega.</p>
+                </div>
+            </div>
+
+            <div class="audio-theater">
+                <h3 style="font-family:'Cinzel'; margin-bottom:10px;">Play Our Anthem In The Background</h3>
+                <p style="color: var(--text-dark); margin-bottom:20px; font-size:0.95rem;">Apna sabse pasandida gāna background me chalayein aur is virtual tour ka anand lein.</p>
+                <button class="btn-gold" style="background:#FFF;" onclick="playAudioPrompt()">Activate Audio Guide</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Crafted With Immense Love & Absolute Respect For A True Brother</p>
+        <p style="font-size:0.75rem; margin-top:15px; letter-spacing:4px; text-transform:uppercase;">Made By Someone Who Calls You Brother • <span class="heart-icon">♥</span> Forever</p>
+    </footer>
+
+    <script>
+        // LUXURY FLOATING PARTICLES REPLICATING GOLDEN FLUID GLOW
+        const canvas = document.getElementById('luxury-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class LuxuryParticle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * -0.5 - 0.1; // Slow upward float
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.y < 0) {
+                    this.y = canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+                if (this.x < 0 || this.x > canvas.width) {
+                    this.speedX = -this.speedX;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = '#D4AF37'; // Golden Elegant Glitter
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < 70; i++) {
+                particlesArray.push(new LuxuryParticle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // INTERACTIVE SLIDER MECHANISM
+        function switchSlide(index) {
+            const slider = document.getElementById('mainSlides');
+            slider.style.transform = `translateX(-${index * 20}%)`;
+            
+            const dots = document.querySelectorAll('.dot-btn');
+            dots.forEach((dot, i) => {
+                if(i === index) {
+                    dot.classList.add('active-dot');
+                } else {
+                    dot.classList.remove('active-dot');
+                }
+            });
+        }
+
+        // AUDIO SYSTEM EMULATION PROMPT
+        function playAudioPrompt() {
+            alert("Bhai, apna favorite brotherhood song ya calming music Spotify/YouTube par play karo aur is pure website ke sections ko scroll karte huye purani yaadein taaza karo! ❤️");
+        }
+    </script>
+</body>
+</html>
